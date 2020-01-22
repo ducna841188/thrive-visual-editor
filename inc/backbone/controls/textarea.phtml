@@ -1,0 +1,5 @@
+<div class="control-grid wrap full-width">
+	<div class="label"><#= this.model.config.label #></div>
+	<textarea cols="<#= this.get_config('cols', 40) #>" rows="<#= this.get_config('rows', 5) #>"
+			placeholder="<#= this.get_config('placeholder') #>" class="tcb-scroll tve-input-control change" data-fn="changed" <#= this.get_config('extra_attrs', '') #>/>
+</div>

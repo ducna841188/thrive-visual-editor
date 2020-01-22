@@ -1,0 +1,15 @@
+<div class="tth-dropdown-container q-s-relation"></div>
+
+<span class="post-type-label"><#= this.model.getPostTypeLabel() #></span>
+
+<span><?php echo __( ' that belong to ', 'thrive-cb' ); ?></span>
+
+<div class="tth-dropdown-container q-s-operator"></div>
+
+<span><?php echo __( ' of these ', 'thrive-cb' ); ?></span>
+
+<span class="taxonomy-label"><#= this.model.getTaxonomyLabel() #></span>
+
+<div class="tth-dropdown-container q-s-terms"></div>
+
+<button class="tth-delete-block click" data-fn="ruleRemove"></button>

@@ -1,0 +1,14 @@
+<div class="control-grid wrap">
+	<label for="v-v-url">
+		<?php echo __( 'URL', 'thrive-cb' ) ?>
+	</label>
+	<input type="text" data-setting="url" class="v-url tve_provider_url full-width" id="v-v-url" placeholder="e.g. https://vimeo.com/22676965">
+</div>
+<div class="inline-message"></div>
+<hr style="margin-top: 0">
+<div class="control-grid wrap">
+	<label>
+		<?php echo __( 'Player color', 'thrive-cb' ) ?>
+	</label>
+	<div class="tcb-text-right v-setting-color full-width"></div>
+</div>

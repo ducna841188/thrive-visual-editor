@@ -1,0 +1,9 @@
+<div class="control-grid">
+	<div class="label"><#=this.get_config( 'label' )#></div>
+	<div class="input">
+		<a href="javascript:void(0)" class="click style-input dots" data-fn="on_click">
+			<span class="value tcb-truncate t-80"><#=this.get_config( 'label_none', <?php echo json_encode( __( 'None', 'thrive-cb' ) ); ?> )#></span>
+			<?php tcb_icon( 'pen-regular' ); ?>
+		</a>
+	</div>
+</div>

@@ -1,0 +1,79 @@
+<div class="query-title margin-bottom-40">
+	<div class="query-filter-type">
+		<div><?php echo __( 'I want to display the following', 'thrive-cb' ); ?></div>
+		<div class="query-type-switch">
+			<button class="click" data-fn="q_filter" data-filter="custom"><?php echo __( 'Custom Query', 'thrive-cb' ); ?></button>
+			<button <?php echo apply_filters( 'tcb_post_list.disable_related', '' ); ?> class="click" data-fn="q_filter" data-filter="related"><?php echo __( 'Related Posts', 'thrive-cb' ); ?></button>
+		</div>
+		<input class="query-arg" type="hidden" data-arg="filter" value="">
+	</div>
+</div>
+
+<div class="tth-query-container">
+	<div class="post-list-count loading-when-empty"></div>
+	<div class="q-filter" data-view="related" style="display: none">
+		<div class="query-content-type">
+			<strong><?php echo __( 'Related', 'thrive-cb' ); ?></strong>
+		</div>
+		<p>
+			<?php $text = __( 'Display posts related to the current page, by the following criteria: ', 'thrive-cb' ); ?>
+			<?php echo apply_filters( 'tcb_post_list.related_text', $text );; ?>
+		</p>
+		<ul class="tth-options q-related-taxonomies"></ul>
+	</div>
+
+	<div class="q-filter" data-view="custom" style="display: none;">
+		<div class="query-content-type query-post-type-select tth-dropdown-container"></div>
+		<input class="query-arg" type="hidden" data-arg="post_type" value="">
+
+		<div class="tth-body-container q-custom-container">
+			<div class="no-rules">
+				<?php echo __( 'All posts on your website are selected to be displayed in the post list.', 'thrive-cb' ); ?>
+			</div>
+			<div class="query-rules"></div>
+
+			<div class="new-rules">
+				<span><?php echo __( 'Create a display rule based on', 'thrive-cb' ); ?></span>
+				<div class="tth-dropdown-container new-rule-taxonomies"></div>
+			</div>
+
+			<div>
+				<button class="tth-add-rule click" data-fn="newRule" style="display: none;"><?php echo __( 'New Rule', 'thrive-cb' ); ?></button>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<div class="tth-query-container query-options">
+	<div class="query-options-row">
+		<div><?php echo __( 'Arrange the results by: ', 'thrive-cb' ); ?></div>
+		<div class="tth-dropdown-container orderby-arg"></div>
+		<input type="hidden" data-arg="orderby" class="query-arg">
+
+		<div><?php echo __( 'and sort', 'thrive-cb' ); ?></div>
+		<div class="tth-dropdown-container order-arg"></div>
+		<input type="hidden" data-arg="order" class="query-arg">
+
+		<div><?php echo __( 'Display', 'thrive-cb' ); ?></div>
+		<input type="number" min="1" value="1" class="query-arg inline-input-arg" data-arg="posts_per_page">
+
+		<div><?php echo __( 'of the sorted results starting from item number', 'thrive-cb' ); ?></div>
+		<input type="number" min="1" value="1" class="query-arg inline-input-arg" data-arg="offset">
+	</div>
+
+	<div class="query-options-row bottom-settings">
+		<label>
+			<span><?php echo __( 'If there are no results show this message:', 'thrive-cb' ); ?></span>
+			<input type="text" class="query-arg" data-arg="no_posts_text">
+		</label>
+
+		<label>
+			<?php if ( apply_filters( 'tcb_post_list.show_exclude', true ) ) : ?>
+				<input type="checkbox" class="query-arg" data-arg="exclude_current_post" value="1">
+				<span><?php echo __( 'Exclude current post from the list', 'thrive-cb' ); ?></span>
+			<?php endif; ?>
+		</label>
+
+	</div>
+</div>

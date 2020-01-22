@@ -1,0 +1,36 @@
+<div class="tve-lg-field-data">
+	<div class="control-grid tve-lg-field-type">
+		<div class="label">
+			<?php echo __( 'Field Type', 'thrive-cb' ); ?>
+		</div>
+		<div class="input">
+			<select class="change tve-lg-field-type-select" data-fn="changeType"></select>
+		</div>
+	</div>
+	<div class="tcb-edit-item-category">
+		<div class="control-grid tve-lg-placeholder">
+			<div class="label">
+				<?php echo __( 'Placeholder', 'thrive-cb' ); ?>
+			</div>
+			<div class="input">
+				<input type="text" class="change input tve-lg-field-placeholder" data-fn="changePlaceholder"/>
+			</div>
+		</div>
+		<div class="control-grid no-space">
+			<div class="label">
+				<label class="tcb-checkbox"><input type="checkbox" class="change tve-lg-field-required" data-fn="changeRequired"/><span><?php echo __( 'Required', 'thrive-cb' ) ?></span></label>
+			</div>
+		</div>
+	</div>
+	<div class="tcb-field-mapping" style="display: none">
+		<p class="tcb-f-mapping-title">
+			<?php echo __( 'Field Mapping', 'thrive-cb' ); ?>
+		</p>
+		<p id="tcb-field-mapping-unsupported">
+			<?php echo __( 'Field mapping unavailable', 'thrive-cb' ); ?>
+
+			<span data-paneltlt-hover class="tve-cb-img-info ml-5 tcb-unav-field-mapping-tooltip"><?php tcb_icon( 'info-circle-solid' ); ?></span>
+		</p>
+		<div id="tcb-apis-fields-mapping"></div>
+	</div>
+</div>

@@ -1,0 +1,18 @@
+<div id="tcb-el-name" class="cont"></div>
+<div class="tcb-icons-left cont">
+	<# _.forEach( left_icons, function( icon ){ #>
+	<#= icon.html #>
+	<# }) #>
+</div>
+<div class="tcb-icons-right cont">
+	<?php
+	/**
+	 * Allow other icons to be inserted here
+	 */
+	do_action( 'tcb_element_right_icons' );
+	?>
+	<div class="tve-drag-handle no-blur -v tcb-i tcb-mobile-hidden tcb-tablet-hidden" draggable="true"><?php tcb_icon( 'move', false, 'editor' ); ?></div>
+	<# _.forEach( right_icons, function( icon ){ #>
+	<#= icon.html #>
+	<# }) #>
+</div>

@@ -1,0 +1,27 @@
+<#if( shortcode ){#>
+	<# _.each(shortcode.input, function(input, key) { #>
+		<# const selected_value = selected_data.configOptions? selected_data.configOptions.find(function(object) { return object.key === key;}).value : false #>
+		<#if(input.type == 'select'){#>
+			<label for="fr-dropdown-list-<#= key #>" class="tcb-select-label"><#= input.label #> </label>
+			<select name="<#= key #>" class="fr-custom-input <#= input.info? '': 'fr-input-line' #>" id="fr-dropdown-list-<#= key #>">
+				<# _.each(input.value, function(option, option_key) { #>
+				<option value="<#= option_key #>" <#= selected_value == option_key? 'selected="selected"':'' #><#= input.value_type? 'data-type="'+input.value_type[option_key]+'"':'' #>>
+					<#= input.labels && input.labels[ option ] ? input.labels[ option ] : option #>
+				</option>
+				<# }); #>
+			</select>
+		<#}#>
+		<#if(input.type == 'input'){#>
+			<label for="fr-dropdown-list-<#= key #>"><#= input.label #></label>
+			<input type="text" name="<#= key #>" class="fr-custom-input <#= input.info? '': 'fr-input-line' #>" id="fr-dropdown-list-<#= key #>" value="<#= selected_value? selected_value:input.value #>"/>
+		<#}#>
+		<#if(input.type == 'checkbox'){#>
+		<label class="tcb-checkbox fr-dropdown-list-<#= key #>  <#= input.info? '': 'fr-input-line' #>">
+			<input type="checkbox" name="<#= key #>" class="fr-custom-input" <#= parseInt(selected_value)? 'checked="checked"' : '' #> value="1">
+			<span><#= input.label #></span>
+		</label>
+		<br>
+		<#}#>
+	<# }); #>
+	<div class="tve-custom-input-extra-options"></div>
+<#}#>

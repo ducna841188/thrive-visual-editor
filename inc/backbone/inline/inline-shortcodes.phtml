@@ -1,0 +1,17 @@
+<div class="fr-link-insert-layer fr-layer fr-active">
+	<label for="fr-dropdown-list">Inline Shortcode</label>
+	<select name="shortcodes" class="fr-input-line" id="fr-dropdown-list" >
+		<# _.each(shortcodes, function(group, group_name) { #>
+		<optgroup label="<#= group_name #>">
+			<# _.each(group, function(shortcode) { #>
+			<option value="<#= shortcode.value #>" data-param1="<#= shortcode.option #>" <#= shortcode.extra_param ? 'data-param2="' + shortcode.extra_param + '"' : '' #> ><#= shortcode.option #></option>
+			<# }); #>
+		</optgroup>
+		<# }); #>
+	</select>
+	<div class="tve-custom-input-container"></div>
+	<div class="fr-action-buttons row between-xs reverse">
+		<button class="fr-command fr-submit" role="button" id="fr-shortcode-popup-action-button" data-cmd="shortcodeInsert" href="#" tabindex="5" type="button">Insert</button>
+		<button class="fr-command fr-danger fr-remove fr-hidden" role="button" data-cmd="shortcodeRemove" href="#" tabindex="6" type="button">Remove</button>
+	</div>
+</div>

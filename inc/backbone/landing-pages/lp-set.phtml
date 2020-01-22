@@ -1,0 +1,15 @@
+<div class="tve-template-set <#= typeof locked !== 'undefined' ? 'locked': '' #>" data-set="<#= set #>" data-type="<#= type #>">
+	<# if( typeof locked !== 'undefined' ) { #>
+	<span class="locked-star">
+			<?php tcb_icon( 'star' ) ?>
+		</span>
+	<# } #>
+	<span><#= label #></span>
+	<# if(hasBlocks){ #>
+	<span class="tve-blocks-icon tcb-icon-17px"><?php tcb_icon( 'cubes-light', false, 'sidebar', 'click show-block-tooltip' ) ?></span>
+	<# } #>
+	<div class="template-wrapper click exp-set">
+		<div class="template-thumbnail" style="background-image: url('<#= thumbnail #>')"></div>
+		<div class="expand-set"><?php echo __( 'EXPAND SET', 'thrive-cb' ); ?></div>
+	</div>
+</div>

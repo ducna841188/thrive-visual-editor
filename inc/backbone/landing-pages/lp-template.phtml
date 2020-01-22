@@ -1,0 +1,26 @@
+<div class="tve-template-item <#= ( typeof locked !== 'undefined' && locked === 1 ) ? 'locked' : '' #>" data-key="<#= key #>">
+	<# if( typeof locked !== 'undefined' && locked === 1 ) { #>
+		<span class="locked-star">
+			<?php tcb_icon( 'star' ) ?>
+		</span>
+		<div class="template-locked-text">
+			<p><?php echo __( 'Available in the full version of Thrive Architect', 'thrive-cb' ); ?></p>
+			<a href="https://thrivethemes.com/architect/" title="Thrive Architect" target="_blank"><?php echo __( 'Upgrade', 'thrive-cb' ); ?></a>
+		</div>
+	<# } #>
+	<div class="template-wrapper" data-key="<#= key #>" data-cloud="<#= typeof cloud === 'undefined'?0:1 #>">
+		<div class="template-thumbnail" data-count="<#= typeof count === 'undefined'?0:count #>" style="background-image: url('<#= thumbnail #>')">
+			<# if(key.indexOf('user-saved-template-') === 0) { #>
+			<div class="template-thumbnail-overlay">
+				<div class="tcb-right mr-5 tcb-delete-saved-template click">
+					<?php tcb_icon( 'trash', false ); ?>
+				</div>
+			</div>
+			<# } #>
+		</div>
+		<div class="template-name">
+			<#= name #>
+		</div>
+		<div class="selected"></div>
+	</div>
+</div>
